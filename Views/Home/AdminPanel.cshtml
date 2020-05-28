@@ -1,0 +1,226 @@
+﻿@model e_commerce.ViewModel.ProductCartViewHome
+@{
+    ViewBag.Title = "AdminPanel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="home-stats text-center">
+    <div class="container">
+        <h1>Admin Panel</h1>
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="stat st-members">
+                    <i class="fa fa-users"></i>
+                    <div class="info">
+                        Total Members
+                        <span><a href="@Url.Content("~/Users/Index")">members</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat st-pending">
+                    <i class="fa fa-user-plus"></i>
+                    <div class="info">
+                  @Model.Categoris.Count() Total  Categories
+                        <span><a href="@Url.Content("~/Categories/Index")">Categories</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat st-items">
+                    <i class="fa fa-tag"></i>
+                    <div class="info">
+                    @Model.Products.Count() total Products
+                        <span><a href="@Url.Content("~/Products/Index")">Products</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="stat st-comments">
+                    <i class="fa fa-comments"></i>
+                    <div class="info">
+               Total Orders
+                        <span><a href="@Url.Content("~/Orders/Index")">Orders</a></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="latest">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <i class="fa fa-tasks"></i><span>
+
+                            Members
+                        </span>
+                        <span class="pull-right plus-icon"><i class="fa fa-plus fa-lg"></i></span>
+                    </div>
+                    @{{
+                            foreach (var user in Model.users)
+                            {
+
+                                <div class="panel-body">
+                                    <ul class="list-unstyled latest-items">
+
+                                        <li>
+                                            @user.FristName @user.LastName <a href='~/Users/Details/@user.Id'><span class='btn btn-success pull-right' =><i class='fa fa-edit'></i> Details </a>
+
+
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            }
+                        } }
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <i class="fa fa-tasks"></i><span>
+
+                            products added :
+                        </span>
+                        <span class="pull-right plus-icon"><i class="fa fa-plus fa-lg"></i></span>
+                    </div>
+
+
+                    @{{
+                            foreach (var product in Model.Products)
+                            {
+
+                                <div class="panel-body">
+                                    <ul class="list-unstyled latest-items">
+                                        <li>
+                                            @product.Name <span> @Html.ActionLink("Edit ", "Edit", "Products", new { product.id }, new { @class = "btn btn-success pull-right fa fa-edit " }) </span>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            }
+                        }
+                    }
+
+
+                </div>
+
+            </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                           
+                            <i class="fa fa-comments-o"></i>
+                            Orders added
+                            <span class="pull-right plus-icon"><i class="fa fa-plus fa-lg"></i></span>
+                        </div>
+                        @{foreach (var item in Model.Orders)
+                            {
+
+
+                                <div class="panel-body">
+
+                                    <div class='comment-box'>
+                                        <a href="~/Orders/Show/@item.id"><span class='member'>@item.id</span></a>
+                                        <p class='comment'>@item.User.FristName  @item.User.LastName</p>
+                                    </div>
+                                  </div>
+                            }
+                        }
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-tasks"></i><span>
+                                        categories
+                                    </span>
+                                    <span class="pull-right plus-icon"><i class="fa fa-plus fa-lg"></i></span>
+                                </div>
+
+                                @{{
+                                        foreach (var category in Model.Categoris)
+                                        {
+                                            <div class="panel-body">
+                                                <ul class="list-unstyled latest-items">
+
+                                                    <li>
+                                                        @category.Name <a href="~/Categories/Edit/@category.id"><span class='btn btn-success pull-right'><i class='fa fa-edit'></i> edit </a>
+
+                                                        <br />
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+
+                                        }
+                                    }
+                                }
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+      
+   
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

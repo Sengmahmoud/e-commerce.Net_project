@@ -1,0 +1,18 @@
+﻿@model e_commerce.ViewModel.CartProductViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ foreach(var product in Model.Products)
+    {
+        <h3>@product.ProductId</h3>
+
+
+
+    }
+
+
+            }
+
+

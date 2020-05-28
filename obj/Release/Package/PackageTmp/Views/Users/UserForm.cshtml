@@ -1,0 +1,28 @@
+﻿@model e_commerce.ViewModel.ProductCartViewHome
+@{
+    ViewBag.Title = "UserForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserForm</h2>
+
+@using (Html.BeginForm("Save", "Users", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.Users.UserName)
+        @Html.TextBox("Id",Model.Users.UserName, new { @class = "form-control" })
+
+
+    </div>
+
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(c => c.Roles)
+        @Html.DropDownList("Roles", new SelectList(Model.Roles, "Name","Name"), "Select Role", new { @class = "form-control" })
+
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save</button>
+}

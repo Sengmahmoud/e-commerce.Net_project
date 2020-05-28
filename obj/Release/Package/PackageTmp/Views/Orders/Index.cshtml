@@ -1,0 +1,120 @@
+﻿@model e_commerce.ViewModel.ProductCartViewHome
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+
+<br />
+
+<div class="container">
+    <!-- row -->
+
+    <div class="row">
+
+
+        <!-- MAIN -->
+        <div id="main" class="">
+
+
+            <!-- STORE -->
+            <div id="">
+                <!-- row -->
+                <div class="row">
+
+                    <table id="orders" class="table table-bordered table-responsive">
+                        <tr>
+                            <th>Order Number</th>
+                            <th>name</th>
+                            <th>action</th>
+                        </tr>
+                        <tbody>
+                        @{foreach (var order in Model.Orders)
+                            {
+                                <tr>
+                                    <th>@order.id</th>
+                                    <th>@order.User.FristName @order.User.LastName</th>
+
+
+                                    <td>
+                                        @Html.ActionLink("Show", "Show", "Orders", new { order.id }, new { @class = "fa fa-eye btn btn-primary" })
+
+                                        @*@Html.ActionLink("Delete", "Delete", "Products", new { product.id }, new { @class = "fa fa-eye btn btn-danger" })*@
+                                        <button data-product-id="@order.id" class="fa fa-eye btn btn-danger js-delete">DELETE  </button>
+                                          </td>
+                                </tr>
+                            }
+                        }
+                            </tbody>
+                    </table>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /STORE -->
+            <!-- store bottom filter -->
+            <!-- /store bottom filter -->
+        </div>
+        <!-- /MAIN -->
+    </div>
+    <!-- /row -->
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">تأكيد طلب</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                هل انت متأكد من حذف هذا الطلب؟
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
+                <button type="submit" class="btn btn-primary" id="ok">حذف</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#orders").on("click", ".js-delete", function () {
+                var button = $(this);
+                $('#exampleModal').modal("show")
+                $('#ok').on("click", function () {
+                    $.ajax({
+                        url: "/Orders/Delete/"+ button.attr("data-product-id"),
+                        method: "post",
+                        success: function () {
+                           
+                                button.parents("tr").remove();                       
+                            $('#exampleModal').modal('hide')  
+                            
+                        }
+                    });
+
+                  
+
+                })
+
+
+            });
+
+        });
+
+
+
+
+
+        //
+    </script>
+
+}

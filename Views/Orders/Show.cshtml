@@ -1,0 +1,103 @@
+﻿@model e_commerce.ViewModel.ProductCartViewHome
+@{
+    ViewBag.Title = "Show";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Show</h2>
+
+@*<div class="row">
+
+       @{foreach (var product in Model.CatrtProduct)
+           {
+
+
+    @{decimal toatl = 0;}
+
+               toatl += product.Product.price * product.qnt;
+           }
+       }*@
+
+    <!-- MAIN -->
+    <div id="main" class="">
+
+        <div class="col-md-12">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                    <th>
+                        product Image
+                    </th>
+                    <th>
+                        product Name
+                    </th>
+                    <th>
+                        product Price
+                    </th>
+                    <th>
+                        product quantity
+                    </th>
+                    <th>
+                        Total price
+                    </th>
+                <th>
+                    Action
+                </th>
+                </tr>
+             </thead>
+                <tbody>
+                                  
+                        @foreach (var product in Model.OrderProduct)
+                        {
+                            <tr>
+
+                                <td>
+                                    <img src="@Url.Content("~/resources/img/" + product.Product.img)" alt="mo" width="100" height="100">
+                                </td>
+                                  
+                            <td>
+                                <h3 class="product-name">@product.Product.Name</h3>
+                            </td>
+                                <td>
+                                    <h3 class="product-price">@product.Product.price</h3>
+                                </td>
+                                <td>
+                                    <h3 class="qty"> @product.qnt</h3>
+                                </td>
+                                
+                              
+                                @{var totalprice = product.qnt * product.Product.price;}
+                                <td>
+                                    <h3 class="product-price">@totalprice</h3>
+                                </td>
+                           
+                                <td>
+                                    <h2 class="product-name"><a class="btn btn-primary" href="##">@product.Product.Name</a></h2>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" href="###">Delete</a>
+                                </td>
+                            </tr>
+
+                        }
+
+
+
+                 
+                    
+                </tbody>
+
+            </table>
+
+          
+
+          
+
+
+        </div>
+        @*<div class="text-center" >
+        <h2> Total (USD)</h2>
+        <h2>@toatl</h2>
+            </div>*@
+    </div>
+</div>

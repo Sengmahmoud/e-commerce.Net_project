@@ -1,0 +1,113 @@
+﻿@model e_commerce.ViewModel.ProductCartViewHome
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+@{ if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+@Html.ActionLink("New Product", "New", "Products", null, new { @class = "btn btn-primary" })
+        } }
+<br />
+<br />
+
+<div class="container">
+    <!-- row -->
+    
+    <div class="row">
+       
+
+        <!-- MAIN -->
+        <div id="main" class="">
+
+
+            <!-- STORE -->
+            <div id="">
+                <!-- row -->
+                <div class="row">
+                   
+                    <table id="products" class="table table-bordered table-responsive" >
+                        <tr>
+                            <th>name</th>
+                            <th>price</th>
+                            <th>image</th>
+                            <th>category</th>
+                            <th>action</th>
+                        </tr>
+                        @{foreach (var product in Model.Products)
+                            {
+                        <tr>
+                            <th id="pron">@product.Name</th>
+                            <th>@product.price.ToString("c")</th>
+                             <th><img src="@Url.Content("~/resources/" + product.img)" width="50px" height="50px"></th>
+
+                            <th>@product.Category.Name </th>                          
+                            <th>
+                                @Html.ActionLink("Show", "Details", "Products", new { product.id }, new { @class = "fa fa-eye btn btn-primary" })
+                                @{ if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                                    {
+
+
+                                        @Html.ActionLink("Edit", "Edit", "Products", new { product.id }, new { @class = "fa fa-eye btn btn-warning" })
+                                        @*@Html.ActionLink("Delete", "Delete", "Products", new { product.id }, new { @class = "fa fa-eye btn btn-danger" })*@
+                                        <button data-product-id="@product.id" class="btn btn-danger js-delete fa fa">DELETE  </button>
+                                        if (product.qnt == 1)
+                                        {
+                            <h2 class="fa fa" style="background-color:red">غير موجود حاليا</h2>
+                                            }
+                                        }
+                                    }
+                                @*<button data-product-id="@product.id" class="btn-link js-delete">Delete</button>*@
+
+                                @*<form action="#" method="post" style="display: inline;">
+
+            <button type="submit" class="btn btn-danger">Detete</button>
+        </form>*@
+                            </th>
+                        </tr>
+                                }
+                            }
+                    </table>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /STORE -->
+            <!-- store bottom filter -->
+            <!-- /store bottom filter -->
+        </div>
+        <!-- /MAIN -->
+    </div>
+    <!-- /row -->
+</div>
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#products").on("click", ".js-delete", function () {
+                var button=$(this);
+                if (confirm("do you want ot detete it")) {
+                    $.ajax({
+                        url: "/Products/Delete/" + button.attr("data-product-id"),
+                        method:"post",
+                        success: function () {
+
+                            button.parents("tr").remove();
+                        }
+
+                    });
+
+                }
+            });
+
+        });
+
+
+
+
+    </script>
+
+}

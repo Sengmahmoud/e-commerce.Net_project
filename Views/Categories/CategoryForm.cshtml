@@ -1,0 +1,52 @@
+﻿@model e_commerce.ViewModel.ProductCartViewHome
+@{
+    ViewBag.Title = "CategoryForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <!-- row -->
+    <div class="row">
+
+
+        <!-- MAIN -->
+        <div id="main" class="">
+
+
+            <!-- STORE -->
+            <div id="">
+                <!-- row -->
+                <div class="row">
+                         <div class="col-md-4 col-sm-6 col-xs-6">
+                            @using (Html.BeginForm("Save", "Categories"))
+                            {
+                                @Html.ValidationSummary(true, "Fix Errors ");
+                                <div class="form-group">
+
+                                    @Html.LabelFor(m => m.Category.Name)
+                                    @Html.TextBoxFor(m => m.Category.Name, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Category.Name)
+
+                                </div>
+                                <div class="form-group">
+                                    @Html.HiddenFor(m => m.Category.id)
+                                    <button type="submit" class="btn btn-primary"><span class="fa fa-plus"></span> Save</button>
+                                </div>
+
+
+
+                            }
+
+                        </div>
+                        <!-- /row -->
+                    </div>
+                    <!-- /STORE -->
+                    <!-- store bottom filter -->
+                    <!-- /store bottom filter -->
+                </div>
+           
+        <!-- /MAIN -->
+    </div>
+    <!-- /row -->
+</div>
+    </div>

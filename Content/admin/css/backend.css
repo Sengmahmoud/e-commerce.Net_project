@@ -1,0 +1,782 @@
+
+body 
+{
+padding-top:70px;
+background-color::f4f4f4;
+font-size:16px;
+}
+.mylang
+{
+    position: absolute;
+    left: 100px;
+    color: white;
+    background-color: #5a5855;
+    top: 10px;
+}
+
+/*end newadd page*/
+.faildAdvtm
+{
+	position: absolute;
+    z-index: 6;
+    opacity: 2.9;
+    padding: 10px;
+    border-radius: 8px;
+    left: 752px;
+    top: 5px;
+    width: 9cm;
+    height: 8cm;
+}
+ .successedAdvtm
+{
+	position: absolute;
+    z-index: 6;
+    opacity: 2.9;
+    padding: 10px;
+    border-radius: 8px;
+    left: 752px;
+    top: 5px;
+    width: 9cm;
+    height: 4cm;
+	font-size:23px;
+}
+.advForm .marking                                          
+ {
+    position: absolute;
+    right: 22px;
+    top: 1px;
+    font-size: 40px;
+    color: #B70E0E;
+ }
+.myPanel
+{
+	position:relative;
+    height:10cm;
+    overflow:scroll;
+}
+.myPanel .productBox
+{
+	position:absolute;
+	width:7cm;
+	background-color: #929AA0;
+}
+.thumbnail>img {
+    margin-right: 0;
+    border: 2px solid #BD9F9F;
+    margin-left: auto;
+	width: 183px;
+    height: 164px;
+}
+.productBox .price {
+    background-color: #7B7D7A;
+    padding: 6px 1px 2px 1px;
+    position: absolute;
+    left: 8px;
+    border-radius: 25%;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    width: 90px;
+	height: 60px;
+}
+.productBox .material {
+    background-color: #7B7D7A;
+    padding: 0px;
+    position: absolute;
+    left: 8px;
+    border-radius: 25%;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    width: 90px;
+    height: 30px;
+    top: 135px;
+}
+.livePreview .caption
+{
+	border: 1px solid #C5A2A2;
+    background-color: rgba(234, 212, 212, 0.2);
+    margin: 2px;
+    border-radius: 4px;
+	color: white;
+}
+.productBox .caption h3
+{
+	font-weight: bold;
+    font-family: cursive;
+	    color: #DA2929
+}
+.productBox .caption a
+{
+	text-decoration:none;
+}
+.productBox .caption h3:hover
+{
+	color:red;
+	background-color:black;
+	padding: 4px;
+    border-radius: 3px;
+}
+.productBox .caption .date
+{
+	color: hsla(0, 100%, 100%, 0.49);
+    margin-left: 228px;
+    font-size: 13px;
+}
+.productBox .country
+{
+	background-color: #848C80;
+    padding: 10px 1px 3px 1px;
+    position: absolute;
+    left: 8px;
+    border-radius: 25%;
+    color: rgb(239, 229, 229);
+    font-size: 20px;
+    width: 90px;
+    height: 60px;
+    top: 70px
+}
+.myBox
+{
+	background-color:#928A8A;
+}
+.myBox .country,.myBox .material,.myBox .price
+{
+	margin-left: 12px;
+    width: 4cm;
+    border-radius: 5px;
+    background-color: rgba(41, 28, 34, 0.48);
+    color: rgb(255, 255, 255);
+}
+ 
+.myBox img
+{
+  margin-right: 7px;
+}
+.liveDescrip
+{
+	color:#000;
+}
+.myBox .caption
+{
+	padding: 9px;
+    color: #333;
+    background-color: #3A3535;
+    margin: 5px 6px 2px 10px;
+    border-radius: 5px;
+	height: 136px
+}
+.myBox .caption p
+{
+	color:white;
+	font-size:bold;
+}
+.myBox .unApprovedProduct
+{
+	position: absolute;
+    background-color: #c0392b;
+    color: white;
+    top: 128px;
+    right: 13px;
+    border-radius: 0px;
+    padding: 7px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.livePreview
+{
+	width: 300px;
+    margin-left: 79px;
+    max-width: 300px;
+	position: fixed;
+}
+/*end newadd page*/
+
+/*start product page form*/
+.advtmSide
+{
+	position:relative;
+}
+.imagePos
+{
+	position: absolute;
+    top: 447px;
+    left: 945px;
+    background-color: gray;
+    padding: 20px;
+    width: 294px;
+	overflow: auto;
+	border-radius:5px;
+}
+#file
+{
+	padding-bottom:10px;
+}
+.form-control .addNew 
+{
+	color:red;
+	background-color:green;
+}
+ 
+.form-horizontal .addField {
+    position: absolute;
+    top:-500px;
+    right: -1cm;
+    background-color: #D2CECE;
+    padding: 10px;
+    border-radius: 8px;
+    border: 3px solid #AB9090;
+	min-width:8cm;
+	min-height:3cm;
+	height:4cm;
+	z-index:100;
+}
+.form-horizontal .addField  .btn
+{
+	display:block;
+	top:2.5cm;
+	position:absolute;
+	right:-20cm;
+	width:3cm;
+}
+.form-horizontal .addField .fa-close
+{
+	background-color: #AB9D9D;
+    padding: 3px;
+    border-radius: 50%;
+    position: absolute;
+    right: 3px;
+    top: 1px;
+    font-size: 20px;
+	color:#2F2F2E;
+	cursor:pointer;
+}
+.form-horizontal .addField .fa-close:hover
+{
+	background-color:red;
+}
+ .form-horizontal .add input
+ {
+	 width:7cm;
+	 position:absolute;
+	 left:-1500px;
+ }
+ .form-horizontal .delete select
+ {
+	 width:7cm;
+	 position:absolute;
+	 left:-1500px;
+ }
+  
+ .typeBtn
+ {
+	     margin-top: 5px
+ }
+ .form-group .name,.form-group .nameD,
+ .form-group .style,.form-group .styleD,
+ .form-group .material,.form-group .materialD
+ {
+	    width: 261px;
+ }
+ form label
+ {
+	 font-weight:bold;
+ }
+ /*end product page form*/
+
+/*start login form*/
+
+.login 
+{
+	width:300px;
+	margin:100px auto;
+	width: 300px;
+   margin: 272px auto;
+}
+.errorLoginMessage
+{
+    position: absolute;
+    top: 553px;
+    left: 520px;
+    z-index: 5;
+}
+.login input{margin-bottom:10px;}
+.login h4
+{
+color:#666;
+color:#D8CDCD
+}
+.marking                                                                              
+ {
+    position: absolute;
+    right: 24px;
+    top: 301px;
+    font-size: 30px;
+    color: #B14747;
+ }
+ 
+ .eye
+ {
+    top: 348px;
+    right: 21px;
+    position: absolute;
+    font-weight: bold;
+    font-size: 19px;
+    color: #B14865;
+ }
+.adminForm
+{
+	border: 3px solid #1F1D1D;
+    width: 9cm;
+    height: 12cm;
+    margin: 20px 15px 0px 500px;
+    position: relative;
+	border-radius: 14px;
+    background-color: #333333;
+}
+.adminForm  .fa-user
+{
+	position: absolute;
+    font-size: 263px;
+    top: 4px;
+    left: 69px;
+	color: rgb(232, 227, 227);
+}
+/*end login form*/
+
+/*start bootstrap edit*/
+.navbar {
+	border-radius:0;
+	margin-bottom:0;
+ 
+}
+.navbar img
+{
+	display: inline-block;
+    width: 39px;
+	margin-top: 3px;
+    margin-right: 6px;
+}
+.myNave ul li:hover
+{
+	color:red;
+	background-color:rgb(175, 13, 13);
+}
+.colored
+{
+	background-color:#0F0;
+}
+.navbar-inverse .navbar-nav>.open>a,
+ .navbar-inverse .navbar-nav>.open>a:focus,
+  .navbar-inverse .navbar-nav>.open>a:hover,
+  .dropdown-menu
+{
+	background-color:#31708f;
+}
+ .dropdown-menu
+{
+	padding-top:0;
+	font-size::1em;
+	border:none;
+}
+.dropdown-menu>li>a
+{
+	color: #eee;
+	padding::7px 15px;
+}
+/*end bootstrap edit*/
+/* start members page*/
+h1{
+	margin:20px 0;
+	font-weight:bold;
+	color:#888;
+}
+.update
+{
+	font-size:30px;
+}
+.main-table
+{
+ -webkit-box-shadow:0 3px 6 px #ccc;
+ -moz-box-shadow:0 3px 6 px #ccc;
+  box-shadow:0 3px 6 px #ccc;
+}
+.main-table td
+{
+	background-color:#fff;
+	vertical-align:middle !important;
+}
+.main-table tr:first-child td
+{
+background-color:#333;
+color:#fff;
+}
+.error
+{
+	margin-top:20px;
+}
+/* end members page*/
+/*start dashboard page*/
+.home-stats .stat
+{
+    padding:20px;
+	font-size:20px;
+	color:#FFF;
+	border-radius:5px;
+	position:relative;
+	 overflow:hidden;
+}
+.home-stats .stat .info
+{
+ float:right;
+ font-size:18px;
+}
+.home-stats .stat .info span
+{
+	font-size:2em;
+}
+.home-stats .stat i
+{
+  font-size:60px;
+  position:absolute;
+  left:20px;
+  top:30px;
+}
+.home-stats .stat a
+{
+	color:#FFF;
+}
+.home-stats .stat a:hover
+{
+	font-size:40px;
+	text-decoration:none;
+}
+.home-stats .st-members
+{
+	background-color:#3498db;
+}
+.home-stats .st-pending
+{
+	background-color:#c0392b;
+}
+.home-stats .st-items
+{
+	background-color:#d35400;
+}
+.home-stats .st-comments
+{
+	background-color:#8e44dd;
+}
+.home-stats .stat span
+{
+	display:block;
+}
+.latest
+{
+	margin-top:30px;
+}
+.latest-items li
+{
+	padding:5px 5px;
+	border-radius:1px;
+	overflow:hidden;
+}
+.latest-items .btn-info
+{
+	  margin-right:4px;
+}
+.latest-items li:nth-child(odd)
+{
+	background-color:#EEE;
+}
+
+.plus-icon
+{
+	color:#AFAAAA;
+}
+.plus-icon:hover
+{
+	color:red;
+}
+.latest .comment-box 
+{
+	position:relative;
+}
+.latest .comment-box .member {
+    float: left;
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    font-size: 25px;
+}
+.latest .comment-box  .comment
+{
+	text-align: center;
+    background-color: rgba(139, 148, 148, 0.14);
+    padding: 10px;
+    border-radius: 2px;
+	margin-left:4cm;
+	position:relative;
+}
+.latest .comment-box  a
+{
+	text-decoration:none;
+}
+.latest .comment-box .comment:before {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: -30px;
+    width: 0;
+    height: 0;
+    display: block;
+    border-style: solid;
+    border-color: transparent #EFF0F0  transparent transparent;
+    border-width: 15px;
+}
+/*end dashboard page*/
+
+/*start category page and include type page*/
+.category span
+{
+	border-radius:3px;
+	padding :7px;
+	margin-right:4px;
+}
+.category .visibility,
+.type .visibility
+{
+	background-color:#3498db;
+}
+.category .comment
+{
+	background-color:#8e44dd;
+}
+.category .cat,
+.type .cat
+{
+	padding:10px;
+	position:relative;
+	overflow:hidden;
+	border-radius:4px;
+}
+.category .cat:hover,
+.type .cat:hover
+{
+	background-color:#CCC;
+}
+.category .cat:hover .hidden-button,
+.type .cat:hover .hidden-button
+{
+	right:2px;
+}
+.category .advertising
+{
+	background-color:#d35400;
+}
+.category .hidden-button a
+{
+	margin-right:4px;
+}
+.type .hidden-button a
+{
+	margin-right: 4px;
+    width: 4cm;
+    height: 1.5cm;
+    padding-top: 10px;
+    font-size: 25px;
+}
+.category .hidden-button
+{
+	-webkit-transition:all .5s ease-in-out;
+	-moz-transition:all .5s ease-in-out;
+	 transition:all .5s ease-in-out;
+	position:absolute;
+	top:10px;
+	right:-200px;
+}
+
+.type .hidden-button
+{ 
+-webkit-transition:all .5s ease-in-out;
+	-moz-transition:all .5s ease-in-out;
+	 transition:all .5s ease-in-out;
+    position:absolute;
+    top: 40px;
+    right: -200px;
+}
+.cat h3
+{
+	cursor:pointer;
+	font-weight:bold;
+	color:#6A6A6A;
+}
+
+.cat p
+{
+	color:#4C5258;
+}
+
+.update-category span
+{
+	display:block;
+	font-size:30px;
+}
+
+.category .panel-heading,
+.type .panel-heading
+{
+	position:relative;
+}
+
+
+.main-view
+{
+	position:absolute;
+	font-weight:bold;
+	padding:5px;
+	top:7px;
+	right:20px;
+}
+.main-view .view
+{
+	font-size:25px;
+}
+.main-view .classic-view
+{
+	 cursor:pointer;
+}
+.main-view .full-view
+{
+	 cursor:pointer;
+	margin-left:-15px;
+}
+
+.active
+{
+	color:red;
+	font-weight:bold;
+}
+.type .typeInfo
+{
+    background-color: #AB7575;
+    border: 4px solid #606065;
+    padding: 10px;
+    border-radius: 10px;
+    width: 13cm;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.type .typeInfo .number
+{
+    font-size: 3em;
+    padding: 12px;
+    color: #B50E0E;
+    border: 2px solid #5F5656;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+}
+.type .typeInfo a
+{
+	text-decoration:none;
+}
+.type .typeInfo .paragraph
+{
+  margin-left: 10px;
+}
+.showTable
+{
+	font-size: 30px
+}
+.showTable tr:nth-child(odd)
+{
+	background-color:green !important;
+	color:#9C5252;
+}
+/*end category page and include type page*/
+
+/*start comment page*/
+ 
+.manage-comments .comment
+{
+	max-width:10cm;
+	max-height:5cm;
+	overflow:auto;
+}
+.form-control .addNew 
+{
+	color:red;
+	background-color:green;
+}
+.form-horizontal .addField .fa-close
+{
+	background-color: #AB9D9D;
+    padding: 3px;
+    border-radius: 50%;
+    position: absolute;
+    right: 3px;
+    top: 1px;
+    font-size: 20px;
+	color:#2F2F2E;
+	cursor:pointer;
+}
+.form-horizontal .addField .fa-close:hover
+{
+	background-color:red;
+}
+.form-horizontal
+{
+	position:relative;
+}
+.form-horizontal .addField {
+    position: absolute;
+    top:-300px;
+    right: -1cm;
+    background-color: #D2CECE;
+    padding: 10px;
+    border-radius: 8px;
+    border: 3px solid #AB9090;
+	min-width:8cm;
+	min-height:3cm;
+	height:4cm;
+}
+.form-horizontal .addField  .btn
+{
+	display:block;
+	top:2.5cm;
+	position:absolute;
+	right:-12cm;
+	width:3cm;
+}
+ .form-horizontal .add input
+ {
+	 width:7cm;
+	 position:absolute;
+	 left:-1500px;
+ }
+ .form-horizontal .delete select
+ {
+	 width:7cm;
+	 position:absolute;
+	 left:-1500px;
+ }
+ .form-group .material,.form-group .style,.form-group .name,
+ .form-group .nameD,.form-group .styleD,.form-group .materialD
+ {
+	 display:inline-block;
+	 margin-top:5px;
+	 width:210px;
+ }
+   
+/*end comment page*/
+
+/*start offer page*/
+.offerSelect
+{
+	width: 99px;
+    height: 38px;
+    border-radius: 9px;
+    background-color: rgba(128, 128, 128, 0.17);
+    font-size: 21px;
+}
+/*end offer page*/

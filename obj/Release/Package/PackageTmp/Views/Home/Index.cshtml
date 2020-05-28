@@ -1,0 +1,84 @@
+﻿@model e_commerce.ViewModel.ProductCartViewHome
+@using Microsoft.AspNet.Identity;
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- row -->
+<div class="row">
+
+
+    <!-- MAIN -->
+    <div id="main" class="">
+
+
+        <!-- STORE -->
+        <div id="">
+            <!-- row -->
+
+
+
+            <div class="row">
+                <!-- Product Single -->
+                @{foreach (var product in Model.Products)
+                    {
+                        <div class="col-md-4 col-sm-6 col-xs-6">
+                            <div class="product product-single">
+
+                                <div class="product-thumb">
+                                    <div class="product-label">
+                                        <span>New</span>
+                                        <span class="sale">-20%</span>
+                                    </div>
+
+
+                                    <button class="main-btn quick-view"><i class="fa fa-search-plus"><a href="~/Products/Details/@product.id">Quick view</a></i> </button>
+                                    <img src="@Url.Content("~/resources/" + product.img)"   alt="">
+                                </div>
+                                <h3 class="product-price">@product.price.ToString("c") <del class="product-old-price"></del></h3>
+                                <div class="product-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o empty"></i>
+                                </div>
+                                <span><i class="fa fa-star fa-fw"></i><a href="~/Products/Details/@product.id">@product.Name</a></span>
+                                <div class="product-btns">
+                                    <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                    <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+
+
+@{if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("AddtoCart", "Home", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "myForm1", @role = "form" }))
+        {
+        <input type="hidden" name="ProductId" value="@product.id" />
+        <input type="hidden" name="CartId" value="@Model.Cart.id" />
+        <button type="submit" class="primary-btn add-to-cart fa fa-shopping-cart">Save</button>
+
+            }
+        }
+    }                     </div>
+
+                        </div>
+
+                            <!-- /Product Single -->
+
+                        </div>
+
+
+                    }
+                }
+            </div>
+
+            <!-- /row -->
+        </div>
+        <!-- /STORE -->
+        <!-- store bottom filter -->
+        <!-- /store bottom filter -->
+    </div>
+    <!-- /MAIN -->
+</div>
+<!-- /row -->

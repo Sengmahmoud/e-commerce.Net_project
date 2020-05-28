@@ -1,0 +1,29 @@
+﻿@model e_commerce.ViewModel.ProductCartViewHome
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Roles</h2>
+<div>
+@Html.ActionLink("Create Role", "New", "Roles",null, new { @class = "btn btn-primary" })
+</div>
+<div>
+
+<table class="table table-bordered table-responsive">
+    <tr>
+        <th class="c">
+        <h4>Role Name</h4>
+        </th>
+    </tr>
+    @foreach (var item in Model.Roles)
+    {
+        <tr>
+            <td class="c">
+                @item.Name
+            </td>
+           
+        </tr>
+    }
+</table>
+</div>

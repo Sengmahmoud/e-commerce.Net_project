@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ProductDetails</h2>
+
+<div class="col-md-12 img">
+    <img class="img-responsive center-block img-thumbnail"
+         src="@Url.Content("~/resources/img/product01.jpg")" height="450" width="500" alt="No immage" />
+</div>
+<br>
+<div class="col-md-10 productInfo" align="right">
+    <ul class="list-unstyled">
+        <li><i class="fa fa-calendar fa-fw"></i><span>Name</span>: Name</li>
+        <li><i class="fa fa-money fa-fw"></i> <span>Price</span>:PRice</li>
+        <li><i class="fa fa-star fa-fw"></i> <span>Quntatity</span>:qnt</li>
+        <li><i class="fa fa-tags fa-fw"></i> <span>Category</span>: <a class="btn btn-primary" href="##">##</a></li>
+    </ul>
+</div>
+
+
+<div class="col-md-12">
+  Comments
+</div>
+<div class="col-md-12">
+
+    <form method="post" action="##">
+       
+        <div class="form-group">
+            <label>write somesing...</label>
+            <textarea type="text" name="body" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">ADD Comment</button>
+        </div>
+    </form>
+</div>
+

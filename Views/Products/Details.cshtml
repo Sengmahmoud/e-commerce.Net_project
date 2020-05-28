@@ -1,0 +1,46 @@
+﻿@model e_commerce.ViewModel.ProductCartViewHome
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{foreach (var product in Model.Products)
+    {
+<h2>@product.Name</h2>
+
+<div class="col-md-12 img">
+    <img class="img-responsive center-block img-thumbnail"
+         src="@Url.Content("~/resources/" + product.img)" height="450" width="500" alt="No immage" />
+</div>
+<br>
+<div class="col-md-12 productInfo" align="right">
+    <ul class="list-unstyled">
+        <li><i class="fa fa-calendar fa-fw"></i><span>Name</span>: @product.Name</li>
+        <li><i class="fa fa-money fa-fw"></i> <span>Price</span>:@product.price.ToString("c")</li>
+        @{if (User.IsInRole("Admin"))
+            {
+        <li><i class="fa fa-star fa-fw"></i> <span>Quntatity</span>:@product.qnt</li>
+                }
+            }
+        <li><i class="fa fa-star fa-fw"></i><span>Category:<a href="~/Categories/show/@product.CategoryId">@product.Category.Name</a></span></li>
+        @*<li><i class="fa fa-tags fa-fw"></i> <span>Category</span>:@Html.ActionLink(Model.Category.Name,"Show","Categories",Model.CategoryId,new {@class="btn btn-primary"})</li>*@
+    </ul>
+</div>
+        }
+    }
+
+@*<div class="col-md-12">
+    Comments
+</div>
+<div class="col-md-12">
+
+    <form method="post" action="##">
+
+        <div class="form-group">
+            <label>write somesing...</label>
+            <textarea type="text" name="body" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">ADD Comment</button>
+
+    </form>
+
+</div>*@

@@ -1,0 +1,41 @@
+﻿@model e_commerce.ViewModel.ProductCartViewHome
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table table-bordered table-responsive">
+    <tr>
+        <th class="c">
+            User Name
+        </th>
+        <th class="c">
+            Email
+        </th>
+        <th class="c">
+            Action
+        </th>
+        
+    </tr>
+    @foreach (var item in Model.users)
+    {
+        <tr>
+            
+            <td class="c">
+                @item.FristName @item.LastName
+            </td>
+            <td class="c">
+                @item.UserName
+            </td>
+          
+            
+           
+            <td class="c">
+                <a class="btn btn-primary js-delete" href="~/Users/Edit/@item.Id">Add Role</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,58 @@
+﻿@model e_commerce.ViewModel.ProductCartViewHome
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.FristName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.Address)
+        </th>
+        <th>
+           Number Of Orders
+        </th>
+    </tr>
+
+      <tr>
+        <td>
+            @Html.DisplayFor(model => model.Users.FristName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Users.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Users.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Users.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Users.Address)
+        </td>
+        <td>
+            @Model.Orders.Count()
+           
+        </td>
+    </tr>
+
+
+</table>

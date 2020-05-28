@@ -1,0 +1,134 @@
+﻿@model e_commerce.ViewModel.ProductCartViewHome
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+@{ if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+@Html.ActionLink("New Category", "New", "Categories", null, new { @class = "btn btn-primary btn-large" })
+        } }
+<br />
+<br />
+<div class="container">
+    <!-- row -->
+    <div class="row">
+
+
+        <!-- MAIN -->
+        <div id="main" class="">
+
+
+            <!-- STORE -->
+            <div id="">
+                <!-- row -->
+                <div class="row">
+
+                   
+                        <div class="col-md-4 col-sm-6 col-xs-6">
+                            <table id="categories" class="table table-bordered table-responsive">
+                                <tr>
+                                    <th>name</th>
+                                    <th>action</th>
+                                </tr>
+                                @{foreach (var category in Model.Categoris)
+                                    {
+                                        <tr>
+                                            <th>@category.Name</th>
+
+                                            <th>
+                                                @Html.ActionLink("Show", "Show", "Categories", new { category.id }, new { @class = "btn btn-primary fa fa-eye" })
+                                                @{ if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                                                    {
+                                                        @Html.ActionLink("Eidt", "Edit", "Categories", new { category.id }, new { @class = "btn btn-warning fa fa-edit" })
+                                                        <button data-category-id="@category.id" class="btn btn-danger js-delete fa fa">DELETE  </button>
+                                                        @*@Html.ActionLink("Delete", "Delete", "Categories", new { category.id }, new { @class = "btn btn-danger " })*@
+                                                    }
+                                                }
+                                            </th>
+
+                                        </tr>
+                                                    }
+                                }
+                            </table>
+                            </div>
+                        </div>
+                        <!-- /row -->
+                    </div>
+                    <!-- /STORE -->
+                    <!-- store bottom filter -->
+                    <!-- /store bottom filter -->
+                </div>
+        <!-- /MAIN -->
+    </div>
+    <!-- /row -->
+</div>
+
+
+
+
+
+
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#categories .js-delete").on("click", function () {
+                var button=$(this);
+                if (confirm("do you want ot detete it")) {
+                    $.ajax({
+                        url: "/Categories/Delete/" + button.attr("data-category-id"),
+                        method:"post",
+                        success: function () {
+
+        button.parents("tr").remove();
+    }
+
+});
+
+                }
+            });
+
+        });
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
